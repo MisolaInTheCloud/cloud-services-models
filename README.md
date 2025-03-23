@@ -1,4 +1,4 @@
-# cloud-services-models
+# Cloud-services-models
 
 #1 Identify IaaS, PaaS, SaaS Examples (Daily Interactions)
 Problem = Students often struggle to map abstract cloud models to real-world services.
@@ -59,16 +59,14 @@ Error Message: *The instance profile aws-elasticbeanstalk-ec2-role associated wi
 2. Attached AWS-managed policies for Elastic Beanstalk permissions.  
 3. Updated the environment configuration to use the new role.  
 
-### Screenshots 
+# Screenshots of my successful Environment
 - IAM Role Creation:![image](https://github.com/user-attachments/assets/c87d9ddf-f7f8-4bea-b74c-bad99710c688)
-
 - Environment succes Update:![image](https://github.com/user-attachments/assets/4b833a8d-f291-4e88-9366-1d7e04c3c82e)
-- My Final Environment:![image](https://github.com/user-attachments/assets/cfd3d816-b90a-4b74-90c7-c855bd50ee1c)
+---> My Final Environment:![image](https://github.com/user-attachments/assets/cfd3d816-b90a-4b74-90c7-c855bd50ee1c)
 
  
 # Key Takeaways
 Why IAM Roles Matter: Elastic Beanstalk uses roles to grant EC2 instances permissions to interact with AWS services.
 
-Best Practice: Always verify IAM roles exist before deploying environments. Use AWS’s managed policies to avoid permission issues.
 
 
