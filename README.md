@@ -47,48 +47,31 @@ Error Message: *The instance profile aws-elasticbeanstalk-ec2-role associated wi
 
 
 
-
 # Troubleshooting
 ## 4. Environment Failure Analysis  
 
-### **Issue Description**  
-[Briefly describe the failure, e.g., "Deployment to AWS Elastic Beanstalk failed due to misconfigured IAM roles."]  
+### Issue Description
+The instance profile aws-elasticbeanstalk-ec2-role associated with the environment does not exist.
 
-### **Diagnostic Steps**  
-1. **Error Message:**  
- **Logs Reviewed:**  
-- AWS CloudWatch Logs  
-- Elastic Beanstalk Environment Health Dashboard  
-3. **Configuration Checks:**  
-- Verified IAM user permissions for Elastic Beanstalk.  
-- Validated `app.yaml` syntax for GCP App Engine.  
+Troubleshooting: "Instance Profile Does Not Exist" Error  
 
-### **Root Cause**  
-- **AWS:** Missing `elasticbeanstalk:CreateApplication` permission in IAM policy.  
-- **GCP:** Billing account not linked to the project, blocking resource provisioning.  
 
-### **Resolution**  
-- **AWS:** Attached the `AWSElasticBeanstalkFullAccess` policy to the IAM user.  
-- **GCP:** Linked an active billing account to the project via GCP Console.  
+### Diagnosis  
+- Elastic Beanstalk requires the IAM role `aws-elasticbeanstalk-ec2-role` to launch EC2 instances.  
+- This role was missing in the AWS account.  
 
-### **Screenshots**  
-- Include error messages, logs, and post-resolution success screenshots.  
-Why This Matters
-Learning Objective: Demonstrates problem-solving skills and understanding of cloud platform dependencies (e.g., IAM, billing).
+### Resolution  
+1. Created the IAM role** with the exact name `aws-elasticbeanstalk-ec2-role`.  
+2. Attached AWS-managed policies for Elastic Beanstalk permissions.  
+3. Updated the environment configuration to use the new role.  
 
-Professional Practice: Mirrors real-world DevOps workflows where debugging is critical.
+### Screenshots 
+- [IAM Role Creation](screenshots/iam-role-creation.png)  
+- [Environment Configuration Update](screenshots/eb-config-update.png)
+- 
+# Key Takeaways
+Why IAM Roles Matter: Elastic Beanstalk uses roles to grant EC2 instances permissions to interact with AWS services.
 
-Adjustments to Presentation.md
-Add a slide summarizing the failure:
+Best Practice: Always verify IAM roles exist before deploying environments. Use AWS’s managed policies to avoid permission issues.
 
-markdown
-Copy
-## Lesson 3: Environment Failure & Debugging  
 
-- **Common Pitfalls:**  
-  - Permissions (IAM roles, service accounts).  
-  - Billing/Quota limitations.  
-  - Configuration typos (e.g., `app.yaml`).  
-- **Key Takeaway:**  
-  - Always check logs first; 90% of issues are permissions or syntax errors!  
-Final Repository Structure
