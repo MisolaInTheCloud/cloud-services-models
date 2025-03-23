@@ -61,14 +61,17 @@ Troubleshooting: "Instance Profile Does Not Exist" Error
 - This role was missing in the AWS account.  
 
 ### Resolution  
-1. Created the IAM role** with the exact name `aws-elasticbeanstalk-ec2-role`.  
+1. I created the IAM role** with the exact name `aws-elasticbeanstalk-ec2-rolee`. 
 2. Attached AWS-managed policies for Elastic Beanstalk permissions.  
 3. Updated the environment configuration to use the new role.  
 
 ### Screenshots 
-- [IAM Role Creation](screenshots/iam-role-creation.png)  
-- [Environment Configuration Update](screenshots/eb-config-update.png)
-- 
+- IAM Role Creation:![image](https://github.com/user-attachments/assets/c87d9ddf-f7f8-4bea-b74c-bad99710c688)
+
+- Environment succes Update:![image](https://github.com/user-attachments/assets/4b833a8d-f291-4e88-9366-1d7e04c3c82e)
+- My Final Environment:![image](https://github.com/user-attachments/assets/cfd3d816-b90a-4b74-90c7-c855bd50ee1c)
+
+ 
 # Key Takeaways
 Why IAM Roles Matter: Elastic Beanstalk uses roles to grant EC2 instances permissions to interact with AWS services.
 
