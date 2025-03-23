@@ -14,26 +14,26 @@ Tip: Encourage students to think of tools they use daily (e.g., Netflix = SaaS, 
 #2 Research Two Major Cloud Providers
 Task: Compare AWS and Google Cloud Platform (GCP).
 
-## AWS Offerings 
+# AWS Offerings 
 - IaaS: EC2 (Virtual Machines), S3 (Storage)  
 - PaaS: Elastic Beanstalk, Lambda (Serverless)  
 - SaaS: Amazon Chime, QuickSight  
 
-## GCP Offerings
+# GCP Offerings
 - IaaS: Compute Engine, Cloud Storage  
 - PaaS: App Engine, Cloud Functions  
 - SaaS: Google Workspace, Apigee API Management
 
-  #3 Managed Service Setup
-  - Chosen Platform: AWS Elastic Beanstalk  
-- Steps:
+#3 Managed Service Setup
+- Chosen Platform: AWS -> AWS Elastic Beanstalk  
+# Steps:
 - Login to my AWS.
 - Navigate to Elastic Beanstalk & click on Create Application.
 - I used a demo template for this environment.
 - I created a new Key Pair & new EC2
-- I configured my Environment (Auto-scaling, load balancing).
+- I configured my Environment (Auto-scaling, network (VPCs) load balancing).
 
-Deploy → Capture screenshots of the dashboard and URL.
+# Deploy → Capture screenshots of the dashboard and URL.
   ![image](https://github.com/user-attachments/assets/48f218e5-919b-4542-b7cd-f68a9430e7fa)
   ![image](https://github.com/user-attachments/assets/3f081562-6562-4e67-8887-98907cdfb0b3)
   ![image](https://github.com/user-attachments/assets/39603bf8-992f-4cb3-966b-278b87bc39a0)
@@ -41,20 +41,14 @@ Deploy → Capture screenshots of the dashboard and URL.
   ![image](https://github.com/user-attachments/assets/52edbb79-d39a-4606-a7f4-ddfea730f38d)
 ![image](https://github.com/user-attachments/assets/6893edc1-9553-42bc-8896-64b0f3b63063)
 
-My environment failed! 
+# My environment failed! 
 Error Message: *The instance profile aws-elasticbeanstalk-ec2-role associated with the environment does not exist.*
 ![image](https://github.com/user-attachments/assets/56cc6fb0-16e1-40c9-80bc-15653b7df1d6)
 
 
-
 # Troubleshooting
-## 4. Environment Failure Analysis  
-
-### Issue Description
-The instance profile aws-elasticbeanstalk-ec2-role associated with the environment does not exist.
-
-Troubleshooting: "Instance Profile Does Not Exist" Error  
-
+# Environment Failure Analysis  --> Issue Description
+*The instance profile aws-elasticbeanstalk-ec2-role associated with the environment does not exist.*
 
 ### Diagnosis  
 - Elastic Beanstalk requires the IAM role `aws-elasticbeanstalk-ec2-role` to launch EC2 instances.  
